@@ -21,6 +21,19 @@
       justify-content: space-between;
     }
 
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .header-logo {
+      height: 32px;
+      width: 32px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
     header h1 {
       margin: 0;
       font-size: 1.8rem;
@@ -81,7 +94,10 @@
 </head>
 <body>
   <header>
-    <h1>OnlyJoe</h1>
+    <div class="header-left">
+      <img src="fanslogo.png" alt="OnlyJoe Logo" class="header-logo">
+      <h1>OnlyJoe</h1>
+    </div>
     <div>@joeesposito</div>
   </header>
 
