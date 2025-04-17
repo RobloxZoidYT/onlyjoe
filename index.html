@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      background-color: white;
       color: #222;
     }
 
@@ -28,6 +28,7 @@
 
     .container {
       max-width: 800px;
+      width: 100%;
       margin: 2rem auto;
       background: white;
       border-radius: 8px;
@@ -48,7 +49,14 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      background-color: #ccc;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .username {
@@ -79,7 +87,9 @@
 
   <div class="container">
     <div class="profile-header">
-      <div class="profile-pic"></div>
+      <div class="profile-pic">
+        <img src="joepfp.png" alt="Joe's Profile Picture">
+      </div>
       <div class="username">Joe Esposito</div>
     </div>
 
