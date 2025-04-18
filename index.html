@@ -6,149 +6,9 @@
   <title>OnlyJoe</title>
   <link rel="icon" href="fanslogo.png" type="image/png">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: white;
-    }
-
-    header {
-      background-color: #00aff0;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 48px;
-      box-sizing: border-box;
-    }
-
-    .header-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .header-logo {
-      height: 35px;
-      width: 35px;
-      object-fit: cover;
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 600px) {
-      .header-logo {
-        height: 35px;
-        width: 35px;
-      }
-      header h1 {
-        font-size: 1.4rem;
-      }
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      overflow: hidden;
-      padding: 1rem;
-    }
-
-    .profile-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .profile-pic {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .username {
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    video {
-      width: 100%;
-      max-height: 500px;
-      margin-top: 1rem;
-      border-radius: 8px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 2rem;
-      color: #888;
-      font-size: 0.9rem;
-    }
-
-    /* OnlyFans‑style Subscribe + Price button */
-    .subscribe-btn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      display: flex;
-      align-items: center;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 100px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      z-index: 1000;
-    }
-    .subscribe-text {
-      background-color: #00aff0;
-      color: #fff;
-      padding: 0.75rem 1rem;
-    }
-    .subscribe-price {
-      background-color: #00aff0;
-      color: #fff;
-      padding: 0.75rem 1rem;
-    }
-    .subscribe-btn:hover .subscribe-text,
-    .subscribe-btn:hover .subscribe-price {
-      background-color: #009f5f;
-    }
-
-    /* MOBILE ONLY: flow‑layout button above footer */
-    @media (max-width: 600px) {
-      .subscribe-btn {
-        position: static !important;
-        margin: 20px auto 0 auto;
-        width: auto;
-        max-width: calc(100% - 40px);
-        box-sizing: border-box;
-        right: auto;
-        bottom: auto;
-      }
-      .subscribe-text,
-      .subscribe-price {
-        flex: 1;
-        text-align: center;
-      }
-    }
+    /* … your existing styles … */
+    .subscribe-btn { /* keep your existing subscribe-btn styles */ }
+    .subscribe-text, .subscribe-price { /* … */ }
   </style>
 </head>
 <body>
@@ -174,15 +34,30 @@
     </video>
   </div>
 
-  <!-- Subscribe button (now above footer) -->
-  <a
-    href="https://paypal.me/RobloxZoidYT/4.99?currency=EUR"
-    target="_blank"
+  <!-- PayPal “Buy Now” form -->
+  <form
+    action="https://www.paypal.com/cgi-bin/webscr"
+    method="post"
     class="subscribe-btn"
   >
-    <span class="subscribe-text">SUBSCRIBE</span>
-    <span class="subscribe-price">€4.99</span>
-  </a>
+    <!-- Tell PayPal it’s a Buy Now button -->
+    <input type="hidden" name="cmd" value="_xclick">
+    <!-- Your PayPal account email -->
+    <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL@example.com">
+    <!-- What they’re buying -->
+    <input type="hidden" name="item_name" value="OnlyJoe Exclusive Subscription">
+    <input type="hidden" name="amount"    value="4.99">
+    <input type="hidden" name="currency_code" value="EUR">
+    <!-- After they pay, send them here -->
+    <input type="hidden" name="return"    value="https://onlyjoevids.com/exclusive">
+    <!-- Override IPN to hit your listener -->
+    <input type="hidden" name="notify_url" value="https://onlyjoevids.com/ipn">
+
+    <button type="submit">
+      <span class="subscribe-text">SUBSCRIBE</span>
+      <span class="subscribe-price">€4.99</span>
+    </button>
+  </form>
 
   <footer>
     &copy; 2025 OnlyJoe. Bringing you exclusive Joe vids.
