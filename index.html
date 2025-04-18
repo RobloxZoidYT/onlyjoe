@@ -105,25 +105,36 @@
       font-size: 0.9rem;
     }
 
-    /* OnlyFans‑style Subscribe Button */
-    .subscribe-button {
+    /* OnlyFans‑style Subscribe + Price button */
+    .subscribe-btn {
       position: fixed;
       right: 20px;
       bottom: 20px;
-      background-color: #00aff0;
-      color: #fff;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
       font-size: 1rem;
       font-weight: bold;
+      text-decoration: none;
       border-radius: 100px;
+      overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: background-color 0.2s ease;
       z-index: 1000;
     }
-
-    .subscribe-button:hover {
+    .subscribe-text {
+      background-color: #00aff0;
+      color: #fff;
+      padding: 0.75rem 1rem;
+    }
+    .subscribe-price {
       background-color: #008fc0;
+      color: #fff;
+      padding: 0.75rem 1rem;
+    }
+    .subscribe-btn:hover .subscribe-text {
+      background-color: #009fdf;
+    }
+    .subscribe-btn:hover .subscribe-price {
+      background-color: #007ea0;
     }
   </style>
 </head>
@@ -150,9 +161,11 @@
     </video>
   </div>
 
-  <!-- OnlyFans‑style Subscribe button -->
-  <div class="b-offer-join"><div role="button" tabindex="0" class="m-fluid-width m-rounded m-flex m-space-between m-lg g-btn"><span class="b-btn-text">Subscribe</span>
-        <span class="b-btn-text">for free</span></div><!----></div>
+  <!-- OnlyFans‑style Subscribe + Price button -->
+  <a href="#" class="subscribe-btn">
+    <span class="subscribe-text">SUBSCRIBE</span>
+    <span class="subscribe-price">$4.99</span>
+  </a>
 
   <footer>
     &copy; 2025 OnlyJoe. Bringing you exclusive Joe vids.
