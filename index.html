@@ -46,6 +46,7 @@
         font-size: 1.4rem;
       }
     }
+
     header h1 {
       margin: 0;
       font-size: 1.8rem;
@@ -126,22 +127,21 @@
       color: #fff;
       padding: 0.75rem 1rem;
     }
-    .subscribe-btn:hover .subscribe-text {
-      background-color: #009f5f;
-    }
+    .subscribe-btn:hover .subscribe-text,
     .subscribe-btn:hover .subscribe-price {
       background-color: #009f5f;
     }
+
+    /* MOBILE ONLY: flow‑layout button under footer */
     @media (max-width: 600px) {
       .subscribe-btn {
-        left: 20px !important;
-        right: 20px !important;
-        bottom: 20px !important;
-        width: 100% !important;
-        margin: 0 !important;
-        border-radius: 0 !important;
+        position: static !important;
+        margin: 20px auto 0 auto;
+        width: auto;
+        max-width: calc(100% - 40px);
         box-sizing: border-box;
-        justify-content: space-between;
+        right: auto;
+        bottom: auto;
       }
       .subscribe-text,
       .subscribe-price {
@@ -174,18 +174,18 @@
     </video>
   </div>
 
-  <!-- OnlyFans‑style Subscribe + direct PayPal.me €4.99 -->
+  <footer>
+    &copy; 2025 OnlyJoe. Bringing you exclusive Joe vids.
+  </footer>
+
+  <!-- Subscribe button -->
   <a
     href="https://paypal.me/RobloxZoidYT/4.99?currency=EUR"
     target="_blank"
     class="subscribe-btn"
   >
     <span class="subscribe-text">SUBSCRIBE</span>
-    <span class="subscribe-price">$4.99</span>
+    <span class="subscribe-price">€4.99</span>
   </a>
-
-  <footer>
-    &copy; 2025 OnlyJoe. Bringing you exclusive Joe vids.
-  </footer>
 </body>
 </html>
