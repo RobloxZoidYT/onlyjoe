@@ -132,6 +132,23 @@
     .subscribe-btn:hover .subscribe-price {
       background-color: #009f5f;
     }
+    @media (max-width: 600px) {
+      .subscribe-btn {
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+        justify-content: space-between;
+      }
+      .subscribe-text,
+      .subscribe-price {
+        flex: 1;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
