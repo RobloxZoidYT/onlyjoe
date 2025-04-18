@@ -104,6 +104,27 @@
       color: #888;
       font-size: 0.9rem;
     }
+
+    /* OnlyFans‑style Subscribe Button */
+    .subscribe-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background-color: #00aff0;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 100px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: background-color 0.2s ease;
+      z-index: 1000;
+    }
+
+    .subscribe-button:hover {
+      background-color: #008fc0;
+    }
   </style>
 </head>
 <body>
@@ -128,6 +149,9 @@
       Your browser does not support the video tag.
     </video>
   </div>
+
+  <!-- OnlyFans‑style Subscribe button -->
+  <a href="#" class="subscribe-button">Subscribe</a>
 
   <footer>
     &copy; 2025 OnlyJoe. Bringing you exclusive Joe vids.
